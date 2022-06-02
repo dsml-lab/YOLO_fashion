@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  fashion:
+    build: .
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 2
+              capabilities: [gpu]
+    volumes:
+      - './:/workspace'
+    shm_size: '2gb'
+    tty: true
+    stdin_open: true
+    working_dir: /workspace
