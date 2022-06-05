@@ -5,6 +5,9 @@ datasets/images/test
 datasets/labels/train
 datasets/labels/test
 datasets/dataset.yaml
-yolov5.pt
+yolov5s.pt
 yolov5/
 runs/
+wandb/
+check/
+fashion/

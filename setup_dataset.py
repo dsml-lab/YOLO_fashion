@@ -12,7 +12,7 @@ def create_dataset_yaml(data, filename):
     names = [attr['name'] for attr in data['categories']]
     nc = len(names)
     data_yaml = {
-        'path': '../../datasets',
+        'path': '../datasets',
         'train': 'images/train',
         'val': 'images/test',
         'nc': nc,
@@ -39,8 +39,8 @@ def create_labels(data, label_dir):
         class_id = annotation['category_id']
         x, y, w, h = annotation['bbox']
         # bbox の中心の座標
-        cx = (x + w) / 2
-        cy = (y + h) / 2
+        cx = x + w/2
+        cy = y + h/2
         
         # アノテーションに対応する画像データを取得する
         image = images_info[annotation['image_id']]
@@ -50,7 +50,7 @@ def create_labels(data, label_dir):
         w /= image['width']
         h /= image['height']
 
-        txt_filename = image['file_name'].rstrip('jpg') + 'txt'
+        txt_filename = image['file_name'].replace('.jpg','.txt')
         with open(os.path.join(label_dir, txt_filename), 'a') as txt_file:
             # class x_center y_center width height
             txt_file.write(f'{class_id} {cx} {cy} {w} {h}\n')
@@ -62,13 +62,12 @@ if __name__ == '__main__':
 
     print('Downloading train json file')
     train_data = requests.get('https://s3.amazonaws.com/ifashionist-dataset/annotations/instances_attributes_train2020.json').json()
-    import pdb; pdb.set_trace()
-    # print('Creating dataset yaml file.')
-    # create_dataset_yaml(train_data, 'datasets/dataset.yaml')
-    # print('Creating train labels.')
-    # create_labels(train_data, 'datasets/labels/train')
+    print('Creating dataset yaml file.')
+    create_dataset_yaml(train_data, 'datasets/dataset.yaml')
+    print('Creating train labels.')
+    create_labels(train_data, 'datasets/labels/train')
 
-    # print('Downloading val json file')
-    # val_data = requests.get('https://s3.amazonaws.com/ifashionist-dataset/annotations/instances_attributes_val2020.json').json()
-    # print('Creating val labels.')
-    # create_labels(val_data, 'datasets/labels/test')
+    print('Downloading val json file')
+    val_data = requests.get('https://s3.amazonaws.com/ifashionist-dataset/annotations/instances_attributes_val2020.json').json()
+    print('Creating val labels.')
+    create_labels(val_data, 'datasets/labels/test')

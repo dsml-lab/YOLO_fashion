@@ -20,7 +20,7 @@ RUN conda install \
 RUN apt-get install -y libgl1-mesa-dev
 	
 WORKDIR /workspace
-COPY requiretents.txt /workspace
-RUN pip install -r requiretents.txt
+COPY requirements.txt /workspace
+RUN pip install -r requirements.txt
 
 CMD ["bash"]

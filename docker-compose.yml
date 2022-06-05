@@ -12,7 +12,7 @@ services:
               capabilities: [gpu]
     volumes:
       - './:/workspace'
-    shm_size: '2gb'
+    shm_size: '32gb'
     tty: true
     stdin_open: true
     working_dir: /workspace

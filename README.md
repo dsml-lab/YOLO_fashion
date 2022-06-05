@@ -10,7 +10,6 @@ git clone https://github.com/ultralytics/yolov5.git
 ```
 docker-compose up -d
 ```
-### コンテナを実行
 ```
 docker-compose exec fashion bash
 ```
@@ -32,8 +31,7 @@ python setup_dataset.py
 - https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data#3-train
 - https://github.com/ultralytics/yolov5/wiki/Tips-for-Best-Training-Results
 ```
-cd yolov5
-python train.py --img 1024 --batch 16 --epochs 300 --data ../datasets/dataset.yaml --weights yolov5s.pt
+python yolov5/train.py --img 1024 --batch 128 --epochs 300 --data datasets/dataset.yaml --weights yolov5s.pt --device 0,1 --project fashion --name YOLOv5
 ```
 ## 検出可能なもの（46カテゴリ）
 1. shirt, blouse
