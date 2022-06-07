@@ -3,13 +3,10 @@ import cv2
 import glob
 import copy
 
-image_dir = 'datasets/images/test'
-label_dir = 'datasets/labels/test'
+image_dir = 'datasets/images/val'
+label_dir = 'datasets/labels/val'
 image_filenames = os.listdir(image_dir)
-# import pdb; pdb.set_trace()
-# image_paths = glob.glob(os.path.join(dataset_path, 'images', 'test', '*.jpg'))
-# label_paths = glob.glob(os.path.join(dataset_path, 'labels', 'test', '*.txt'))
-# image_paths = ['datasets/images/test/99601fa457d157b81154d089966c2e3a.jpg']
+
 check_dir = 'check'
 os.makedirs(check_dir, exist_ok=True)
 # BountingBoxを描画

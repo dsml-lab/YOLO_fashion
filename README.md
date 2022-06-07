@@ -34,49 +34,49 @@ python setup_dataset.py
 python yolov5/train.py --img 1024 --batch 128 --epochs 300 --data datasets/dataset.yaml --weights yolov5s.pt --device 0,1 --project fashion --name YOLOv5
 ```
 ## 検出可能なもの（46カテゴリ）
-1. shirt, blouse
-1. top, t-shirt, sweatshirt
-1. sweater
-1. cardigan
-1. jacket
-1. vest
-1. pants
-1. shorts
-1. skirt
-1. coat
-1. dress
-1. jumpsuit
-1. cape
-1. glasses
-1. hat
-1. headband, head covering, hair accessory
-1. tie
-1. glove
-1. watch
-1. belt
-1. leg warmer
-1. tights, stockings
-1. sock
-1. shoe
-1. bag, wallet
-1. scarf
-1. umbrella
-1. hood
-1. collar
-1. lapel
-1. epaulette
-1. sleeve
-1. pocket
-1. neckline
-1. buckle
-1. zipper
-1. applique
-1. bead
-1. bow
-1. flower
-1. fringe
-1. ribbon
-1. rivet
-1. ruffle
-1. sequin
-1. tassel
+0. shirt, blouse
+0. top, t-shirt, sweatshirt
+0. sweater
+0. cardigan
+0. jacket
+0. vest
+0. pants
+0. shorts
+0. skirt
+0. coat
+0. dress
+0. jumpsuit
+0. cape
+0. glasses
+0. hat
+0. headband, head covering, hair accessory
+0. tie
+0. glove
+0. watch
+0. belt
+0. leg warmer
+0. tights, stockings
+0. sock
+0. shoe
+0. bag, wallet
+0. scarf
+0. umbrella
+0. hood
+0. collar
+0. lapel
+0. epaulette
+0. sleeve
+0. pocket
+0. neckline
+0. buckle
+0. zipper
+0. applique
+0. bead
+0. bow
+0. flower
+0. fringe
+0. ribbon
+0. rivet
+0. ruffle
+0. sequin
+0. tassel

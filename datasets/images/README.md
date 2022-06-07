@@ -18,3 +18,5 @@
     |
 
 ```
+
+`setup_dataset.py`を実行すると，testディレクトリ内の画像がtestとvalに分割されます．

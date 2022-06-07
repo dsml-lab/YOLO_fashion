@@ -2,8 +2,10 @@
 *.cache
 datasets/images/train
 datasets/images/test
+datasets/images/val
 datasets/labels/train
 datasets/labels/test
+datasets/labels/val
 datasets/dataset.yaml
 yolov5s.pt
 yolov5/
@@ -11,3 +13,4 @@ runs/
 wandb/
 check/
 fashion/
+*.cache
