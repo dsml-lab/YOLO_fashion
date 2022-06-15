@@ -14,3 +14,5 @@ wandb/
 check/
 fashion/
 *.cache
+notebooks/*.json
+*.pt

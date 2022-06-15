@@ -6,33 +6,33 @@
 ```
 git clone https://github.com/ultralytics/yolov5.git
 ```
-### コンテナを起動
+### condaの仮想環境構築
 ```
-docker-compose up -d
+conda create -n fashion python=3.8
 ```
 ```
-docker-compose exec fashion bash
+conda activate fashion
+pip install yolov5/requirements.txt
 ```
-### データセット用意
-[ここ](https://github.com/cvdfoundation/fashionpedia#images)から画像をダウンロードします．
+
+## 検出デモ
+webカメラから動画を取得してファッションアイテムを検出します．（GPU不要）
+### 全画面表示
+yolov5をそのまま使用すると，全画面表示できません．修正する場合は，`yolov5/detect.py`の176付近を変更してください．
+
 ```
-cd datasets/images
-wget https://s3.amazonaws.com/ifashionist-dataset/images/train2020.zip
-unzip train2020.zip
-wget https://s3.amazonaws.com/ifashionist-dataset/images/val_test2020.zip
-unzip val_test2020.zip
+python yolov5/detect.py \
+    --weights <学習後の重み（.ptファイル）> \
+    --data fashionpedia.yaml \
+    --source 0 \
+    --device cpu \
+    --view-img
 ```
-`setup_dataset.py`を実行して，データセットのアノテーションをダウンロードし，YOLOv5学習用に整形します．
-```
-python setup_dataset.py
-```
-## 学習
-### 参考
-- https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data#3-train
-- https://github.com/ultralytics/yolov5/wiki/Tips-for-Best-Training-Results
-```
-python yolov5/train.py --img 1024 --batch 128 --epochs 300 --data datasets/dataset.yaml --weights yolov5s.pt --device 0,1 --project fashion --name YOLOv5
-```
+- source: カメラのid.うまく行かない場合は，1や２に変えてみてください．
+- device: GPUで実効する場合は， 0 または 0,1 の用にしてください．
+
+終了するときには，ctrl+C で止めてください．
+
 ## 検出可能なもの（46カテゴリ）
 0. shirt, blouse
 0. top, t-shirt, sweatshirt
