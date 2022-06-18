@@ -2,6 +2,10 @@
 [YOLOv5](https://github.com/ultralytics/yolov5)に[Fashionpedia](https://fashionpedia.github.io/home/index.html)というデータセットを学習させて服装を検出できるようにしました．
 
 ## セットアップ
+### このレポジトリをクローン
+```
+git clone -b open-campus-2022 https://github.com/dsml-lab/YOLO_fashion.git
+```
 ### YOLOv5のレポジトリをクローン
 ```
 git clone https://github.com/ultralytics/yolov5.git
