@@ -16,21 +16,17 @@ conda create -n fashion python=3.8
 ```
 ```
 conda activate fashion
-pip install yolov5/requirements.txt
+cd yolov5
+pip install -r requirements.txt
 ```
 
 ## 検出デモ
 webカメラから動画を取得してファッションアイテムを検出します．（GPU不要）
 ### 全画面表示
-yolov5をそのまま使用すると，全画面表示できません．修正する場合は，`yolov5/detect.py`の176付近を変更してください．
+yolov5をそのまま使用すると，全画面表示できません．修正する場合は，`yolov5/detect.py`の176行付近を変更してください．
 ### 実行
 ```
-python yolov5/detect.py \
-    --weights <学習後の重み（.ptファイル）> \
-    --data fashionpedia.yaml \
-    --source 0 \
-    --device cpu \
-    --view-img
+python yolov5/detect.py --weights <学習後の重み（.ptファイル）> --data fashionpedia.yaml --source 0 --device cpu --view-img
 ```
 - source: カメラのid.うまく行かない場合は，1や２に変えてみてください．
 - device: GPUで実行する場合は， 0 または 0,1 のようにしてください．
