@@ -33,50 +33,21 @@ python setup_dataset.py
 ```
 python yolov5/train.py --img 1024 --batch 128 --epochs 300 --data datasets/dataset.yaml --weights yolov5s.pt --device 0,1 --project fashion --name YOLOv5
 ```
-## 検出可能なもの（46カテゴリ）
+## 検出可能なもの（~~46~~ 14カテゴリ）
 0. shirt, blouse
 0. top, t-shirt, sweatshirt
 0. sweater
 0. cardigan
 0. jacket
 0. vest
-0. pants
-0. shorts
-0. skirt
 0. coat
-0. dress
-0. jumpsuit
 0. cape
 0. glasses
 0. hat
 0. headband, head covering, hair accessory
 0. tie
-0. glove
 0. watch
-0. belt
-0. leg warmer
-0. tights, stockings
-0. sock
-0. shoe
-0. bag, wallet
 0. scarf
-0. umbrella
-0. hood
-0. collar
-0. lapel
-0. epaulette
-0. sleeve
-0. pocket
-0. neckline
-0. buckle
-0. zipper
-0. applique
-0. bead
-0. bow
-0. flower
-0. fringe
-0. ribbon
-0. rivet
-0. ruffle
-0. sequin
-0. tassel
+
+## 精度
+![混同行列](src/confusion_matrix.png "混同行列")

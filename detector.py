@@ -19,7 +19,7 @@ from yolov5.utils.torch_utils import select_device
 
 
 DEVICE = 0
-WEIGHTS = ROOT / 'fashion/YOLOv5/weights/best.pt'
+WEIGHTS = ROOT / 'fashion/fashionpedia14/weights/best.pt'
 DATA_YAML = ROOT / 'datasets/dataset.yaml'
 DEVICE = 0
 IMG_SIZE = (1024, 1024)
@@ -80,6 +80,7 @@ class FashionDetector:
 
 
 import cv2
-img = cv2.imread('datasets/images/test/0a45b6b033bf0077a15f484e98f3dbfe.jpg')
+img = cv2.imread('datasets/images/test/0a4f8205a3b58e70eec99fbbb9422d08.jpg')
 detector = FashionDetector()
 print(detector.detect(img))
+import pdb;pdb.set_trace()
