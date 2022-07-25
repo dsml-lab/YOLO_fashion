@@ -11,3 +11,8 @@ torchvision>=0.8.1
 tqdm>=4.41.0
 protobuf<=3.20.1  # https://github.com/ultralytics/yolov5/issues/8012
 tensorboard>=2.4.1
+
+# FastAPI requirements
+fastapi
+uvicorn
+python-multipart
