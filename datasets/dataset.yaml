@@ -1,0 +1,20 @@
+path: ../datasets
+train: images/train
+val: images/val
+test: images/test
+nc: 14
+names:
+- shirt, blouse
+- top, t-shirt, sweatshirt
+- sweater
+- cardigan
+- jacket
+- vest
+- coat
+- cape
+- glasses
+- hat
+- headband, head covering, hair accessory
+- tie
+- watch
+- scarf

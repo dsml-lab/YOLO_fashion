@@ -85,7 +85,7 @@ def split_val_test_img(data):
 if __name__ == '__main__':
     # 検出対象のカテゴリID
     target_categories = [0, 1, 2, 3, 4, 5, 9, 12, 13, 14, 15, 16, 18, 25]
-    yaml_filename = 'datasets/fashionpedia14.yaml'
+    yaml_filename = 'datasets/dataset.yaml'
 
     print('Downloading train json file')
     train_data = requests.get('https://s3.amazonaws.com/ifashionist-dataset/annotations/instances_attributes_train2020.json').json()
