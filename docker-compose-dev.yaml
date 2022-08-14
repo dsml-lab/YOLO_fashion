@@ -2,7 +2,9 @@ version: '3'
 
 services:
   fashion:
-    build: .
+    build:
+      context: .
+      dockerfile: "Dockerfile.dev"
     deploy:
       resources:
         reservations:
@@ -12,7 +14,10 @@ services:
               capabilities: [gpu]
     volumes:
       - './:/workspace'
+    # ports:
+    #   - '8000:8000'
     shm_size: '32gb'
     tty: true
     stdin_open: true
     working_dir: /workspace
+    # command: 'python server.py'

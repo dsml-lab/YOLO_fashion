@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: "Dockerfile.prod"
+    volumes:
+      - './:/workspace'
+    ports:
+      - '8000:8000'
+    working_dir: /workspace
+    command: 'python server.py'
